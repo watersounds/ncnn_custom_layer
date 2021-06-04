@@ -4,12 +4,12 @@ DEFINE_LAYER_CREATOR(MyLayer)
 
 MyLayer::MyLayer()
 {
-	// one input and one output
-	// typical one_blob_only type: Convolution, Pooling, ReLU, Softmax ...
+	// 一个输入一个输出
+	// typical onel_blob_only type: Convolution, Pooling, ReLU, Softmax ...
 	// typical non-non_blob_only type: Eltwise, Split, Concat, Slice ...
 	one_blob_only = true;
 
-	// do not change the blob size, modify data in-place
+	// do not change the blob size, modify data in-place，不改变blob的size，
 	// typical support_inplace type: ReLU, Sigmoid ...
 	// typical non-support_inplace type: Convolution, Pooling ...
 	support_inplace = true;
@@ -75,7 +75,6 @@ int MyLayer::forward_inplace(Mat& bottom_top_blob, const Option& opt) const
 	}
 	return 0;
 }
-
 
 int MyLayer::load_param(const ParamDict& pd)
 {

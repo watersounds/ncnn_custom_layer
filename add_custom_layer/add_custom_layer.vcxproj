@@ -153,8 +153,23 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="add_custom_layer.cpp" />
-    <ClCompile Include="mylayer.cpp" />
+    <ClCompile Include="mylayer.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</ExcludedFromBuild>
+    </ClCompile>
     <ClCompile Include="mylayer.h" />
+    <ClCompile Include="relu6.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+      </ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="test_relu6.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="test_YoloV5Focus.cpp" />
+    <ClCompile Include="YoloV5Focus.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="relu6.h" />
+    <ClInclude Include="YoloV5Focus.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
